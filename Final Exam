@@ -1,0 +1,53 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+using System.Linq;
+
+public class Final : MonoBehaviour {
+
+	public List<int> numbers = new List<int>(1, 30, 40, 70, 100);
+
+	private int[ ] speed1 = new int[4] { 50, 60, 70, 80 };
+	private int[ ] speed2 = new int[4] { 40, 75, 90, 100 };
+	private int[ ] hours = new int[4] {2, 4, 6, 8};
+	private int answer;
+
+	private int inches ;
+	private int feet = 5;
+
+	// Use this for initialization
+	void Start () {
+		Hello ();
+		Math ();
+		Story ();
+		Average ();
+		Measurments ();
+	}
+
+
+	private void Hello (){
+		print ("Hello!");
+	}
+
+	private void Math (float A, float B ){
+		print (A + B);
+		print (A - B);
+		print (A / B);
+		print (A * B);
+	}
+
+	public void Average () {
+		double average = numbers.Average ();
+	}
+
+	private void Measurments(){
+		print (feet / 12);
+	}
+
+	private void Story (){
+		answer = (speed1 [1] * hours [2]) + (speed2 [3] * hours [2]);
+		print ("A train leaves City A and drives west at " + speed1 [1] +"mph. Another train leaves City A and drives east at " + speed2 [3] + 
+			"mph. How many miles apart are the trains after " + hours [2] +" hours? The answer is " + answer  + ".");
+	}
+
+}
